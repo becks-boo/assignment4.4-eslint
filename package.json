@@ -1,0 +1,11 @@
+{
+  "name": "assignment-4.2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "express": "~4.16.1",
+    "sqlite3": "^4.2.0",
+    "twig": "~0.10.3"
+  }
+}
