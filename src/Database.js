@@ -23,8 +23,8 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
 
                     // @TODO #2 insert some query data into database
                     let insert = `INSERT INTO search (id, title, url)
-VALUES (6, "Gather", "https://gather.town")`;// INSERT INTO ...
-                    db.run(insert, [])
+VALUES (?, ?, ?)`;// INSERT INTO ...
+                    db.run(insert, [6, "Gather", "https://gather.town"]);
 
                     // @TODO #4 loop through JSON file and insert every object into the database
                 }

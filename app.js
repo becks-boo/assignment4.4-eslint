@@ -15,22 +15,24 @@ app.get('/test', (req, res) => {
 
 app.get('/search', (req, res) => {
     // @TODO #1 copy code from Assignment 4.2
-    res.render("/search", require("./routes/search_routes"));
+    res.render("search.twig");
 })
 
 app.post('/search', (req, res) => {
     // @TODO #3 implement search in SQLite database
-    db.all(`SELECT 
-                id, 
-                title, 
-                url 
-            FROM search`, [id, title, url], (err, rows) => {
+    // Saves the user text input
+    const searchInput = req.body.search;
+    // Saves the user radio btn choice
+    const columnChoice = req.body.radioBtn;
+
+    const searchQuery = `SELECT * FROM search WHERE ${columnChoice} LIKE ?`;
+
+    db.all(searchQuery, [`%${searchInput}%`], (err, rows) => {
         if (err) {
             console.log(err);
-        } else {
-            // I DON'T KNOW WHAT TO DO HERE
-            let searchQuery = rows;
         }
+
+        res.render('search.twig', { outputs: rows });
     })
 })
 
