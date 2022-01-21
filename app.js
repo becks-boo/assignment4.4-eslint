@@ -45,20 +45,19 @@ app.post('/search', (req, res) => {
 
             res.render('search.twig', { outputs: rows });
         });
+        return
     } else if (radioBtnSelection === "filter-title") {
         // If user selects radio btn "Filter by title"
         columnChoice = "title";
-        searchQuery = `SELECT * FROM search WHERE ${columnChoice} LIKE ?`;
     } else if (radioBtnSelection === "filter-url") {
         // If user selects radio btn "Filter by URL"
         columnChoice = "url";
-        searchQuery = `SELECT * FROM search WHERE ${columnChoice} LIKE ?`;
     } else {
         // If user selects radio btn "Filter by ID"
         columnChoice = "id";
-        searchQuery = `SELECT * FROM search WHERE ${columnChoice} LIKE ?`;
     }
 
+    searchQuery = `SELECT * FROM search WHERE ${columnChoice} LIKE ?`;
 
     db.all(searchQuery, [`%${searchInput}%`], (err, rows) => {
         if (err) {
