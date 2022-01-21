@@ -5,6 +5,7 @@
   "scripts": {},
   "dependencies": {
     "express": "~4.16.1",
+    "npm": "^8.3.2",
     "sqlite3": "^4.2.0",
     "twig": "~0.10.3"
   },
