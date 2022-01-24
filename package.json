@@ -1,0 +1,17 @@
+{
+  "name": "assignment-4.2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "express": "~4.16.1",
+    "npm": "^8.3.2",
+    "sqlite3": "^4.2.0",
+    "twig": "~0.10.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.15"
+  }
+}

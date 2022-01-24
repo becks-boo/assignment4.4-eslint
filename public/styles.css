@@ -1,0 +1,16 @@
+.block {
+    width: 70%;
+    margin: 0 auto;
+    height: 100px;
+    border: 1px solid black;
+    box-shadow: 0 0 5px black;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    border-top: 5px dotted red;
+    height: 50px;
+}

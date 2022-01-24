@@ -1,0 +1,27 @@
+{% extends 'base_template.twig' %}
+
+{% block content %}
+    <form action="/search" method="POST">
+        <input type="text" name="search">
+        <input type="radio" name="radioBtn" id="all-titles" value="all-titles" checked>
+        <label for="all-titles">Show all titles</label>
+        <input type="radio" name="radioBtn" id="filter-title" value="filter-title">
+        <label for="filter-title">Filter by title</label>
+        <input type="radio" name="radioBtn" id="filter-url" value="filter-url">
+        <label for="filter-url">Filter by URL</label>
+        <input type="radio" name="radioBtn" id="filter-id" value="filter-id">
+        <label for="filter-id">Filter by ID</label>
+        <input type="submit" value="Post">
+    </form>
+{% endblock %}
+
+{% block allTitles %}
+    {% for output in outputs %}
+        <p>
+            {{ output.title }} | {{ output.url }}
+        </p>
+    {% endfor %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
